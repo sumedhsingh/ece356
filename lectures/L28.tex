@@ -91,7 +91,7 @@ Our plan is to choose a sequence of partitioning attributes and use those to par
 We will now formalize this according to the definitions in the textbook~\cite{dsc}. Suppose we have a set $S$ of training instances and there are $k$ classes; the fraction of instances in a class $i$ is $p_{i}$. Then we can calculate the Gini measure as:
 
 
-$$\mbox{Gini($S$)} = 1 - \sum_{i-1}^{k}p_{i}^{2}$$
+$$\mbox{Gini($S$)} = 1 - \sum_{i=1}^{k}p_{i}^{2}$$
 
 If all instances are in a single class, the Gini measure is 0; its maximum value is $1-1/k$ if every class is equal in size. This can be used to calculate the information gain; how much we have learned. If $S$ is split into multiple sets, the purity of the split is calculated as:
 
@@ -101,11 +101,11 @@ Then information gain is calculated as purity($S$) $-$ purity($S_{1}, S_{2}, ...
 
 Another measure is of entropy which is:
 
-$$\mbox{Entropy($S$)} = - \sum_{i-1}^{k}p_{i} \log_{2} p_{i}$$
+$$\mbox{Entropy($S$)} = - \sum_{i=1}^{k}p_{i} \log_{2} p_{i}$$
 
 The entropy value is 0 if all instances are in a single class; and has a maximum value if all classes are equal in size. From that we can calculate information content as:
 
-$$ - \sum_{i-1}^{n} \dfrac{|S_{i}|}{|S|}  \log_{2} \dfrac{|S_{i}|}{|S|} $$
+$$ - \sum_{i=1}^{n} \dfrac{|S_{i}|}{|S|}  \log_{2} \dfrac{|S_{i}|}{|S|} $$
 
 And the best split for an attribute is then the one that gives the most benefit: information gain divided by information content.
 
